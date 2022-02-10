@@ -30,7 +30,7 @@
 
 
 <script>
-  
+
   function createQRcode(){
     document.getElementById('qrcode').innerHTML = ""
     document.getElementById('qrcode-table').innerHTML = ""
@@ -41,17 +41,6 @@
 
   $(document).ready(function () {
     $('#qrcode').qrcode('http://www.google.com');
-
-    $('#qrcode-table').qrcode({
-      render: 'table',
-      text: 'http://www.google.com'
-    });
-
-    $('#qrcode-size').qrcode({
-      width: 120,
-      height: 120,
-      text: 'http://www.google.com'
-    });
   });
 </script>
 </body>
