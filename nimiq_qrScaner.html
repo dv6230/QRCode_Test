@@ -93,6 +93,12 @@
         scanner.stop();
     });
 
+    document.getElementById('cam-qr-result').addEventListener('change', (e) => {
+        if (document.getElementById('cam-qr-result').innerText !== 'None'){
+            scanner.stop();
+        }
+    });
+
 
 </script>
 </body>
