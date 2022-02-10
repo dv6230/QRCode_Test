@@ -38,6 +38,7 @@
           html5QrcodeScanner.stop().then(ignore => {
             var ele = document.getElementById("qr-reader")
             ele.style.visibility='hidden'
+            alert("關閉 QR code")
           }).catch(err => {
             // Stop failed, handle it.
           });
