@@ -12,4 +12,4 @@ https://dv6230.github.io/QRCode_Test/nimiq_qrScaner
 
 https://dv6230.github.io/QRCode_Test/nimiq_qrScaner2
 
-https://dv6230.github.io/QRCode_Test/qt1
+https://dv6230.github.io/QRCode_Test/qr1
