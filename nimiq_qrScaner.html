@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Scan from WebCam 1.1</h1>
+    <h1>Scan from WebCam 1.3</h1>
     <div id="video-container">
         <video id="qr-video" style="width: 100% !important; height: auto !important;"></video>
     </div>
@@ -48,6 +48,7 @@
         label.style.color = 'teal';
         clearTimeout(label.highlightTimeout);
         label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+        scanner.stop();
     }
 
     const scanner = new QrScanner(video, result => setResult(camQrResult, result), {
@@ -92,14 +93,7 @@
     document.getElementById('stop-button').addEventListener('click', () => {
         scanner.stop();
     });
-
-    document.getElementById('cam-qr-result').addEventListener('change', (e) => {
-
-        if ( camQrResult.textContent !== 'None' && camQrResult.textContent !== 'No QR code found' ){
-            scanner.stop();
-        }
-    });
-
+    
 
 </script>
 </body>
