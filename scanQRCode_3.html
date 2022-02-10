@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <!-- Required meta tags -->
@@ -30,6 +30,7 @@
 <script>
 
   function scanStart() {
+    var lastResult, countResults = 0;
     const html5QrCode = new Html5Qrcode(/* element id */ "scanDiv");
     html5QrCode.start(
       {facingMode: "environment"},
@@ -59,17 +60,6 @@
       });
   }
 
-  docReady(function () {
-    var resultContainer = document.getElementById('qr-reader-results');
-    var lastResult, countResults = 0;
-
-    function onScanSuccess(decodedText, decodedResult) {
-      if (decodedText !== lastResult) {
-        ++countResults;
-        lastResult = decodedText;
-      }
-    }
-  });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
