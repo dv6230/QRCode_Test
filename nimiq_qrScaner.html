@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Scan from WebCam 1.2</h1>
+    <h1>Scan from WebCam 1.1</h1>
     <div id="video-container">
         <video id="qr-video" style="width: 100% !important; height: auto !important;"></video>
     </div>
@@ -94,7 +94,8 @@
     });
 
     document.getElementById('cam-qr-result').addEventListener('change', (e) => {
-        if (document.getElementById('cam-qr-result').innerText !== 'None'){
+
+        if ( camQrResult.textContent !== 'None' && camQrResult.textContent !== 'No QR code found' ){
             scanner.stop();
         }
     });
