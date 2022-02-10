@@ -8,10 +8,10 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>QR code</title>
 </head>
 <body>
-<h1>Scan from WebCam:</h1>
+<h1>Scan from WebCam 1.1</h1>
 <div id="video-container" class="col-md-8">
     <video id="qr-video"></video>
 </div>
@@ -23,16 +23,13 @@
 <h5>Last detected at: </h5>
 <span id="cam-qr-result-timestamp"></span>
 <br>
-<span id="cam-has-camera"></span>
-<br>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script type="module">
     import QrScanner from "./qr-scanner.min.js";
 
     const video = document.getElementById('qr-video');
-    const videoContainer = document.getElementById('video-container');
-    const camHasCamera = document.getElementById('cam-has-camera');
+    //const videoContainer = document.getElementById('video-container');
     const camList = document.getElementById('cam-list');
     const camHasFlash = document.getElementById('cam-has-flash');
     const camQrResult = document.getElementById('cam-qr-result');
@@ -81,7 +78,7 @@
 
     // for debugging
     window.scanner = scanner;
-    
+
     document.getElementById('start-button').addEventListener('click', () => {
         scanner.start();
     });
