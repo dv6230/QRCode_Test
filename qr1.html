@@ -26,35 +26,17 @@
 
   <h2>Canvas版</h2>
   <div id="qrcode"></div>
-
-  <h2>Table版</h2>
-  <div id="qrcode-table"></div>
-
-  <h2>
-    自訂size (120x120)
-  </h2>
-  <div id="qrcode-size"></div>
 </div>
 
 
 <script>
+  
   function createQRcode(){
     document.getElementById('qrcode').innerHTML = ""
     document.getElementById('qrcode-table').innerHTML = ""
     document.getElementById('qrcode-size').innerHTML = ""
 
     $('#qrcode').qrcode($('#text').val());
-
-    $('#qrcode-table').qrcode({
-      render: 'table',
-      text: $('#text').val()
-    });
-
-    $('#qrcode-size').qrcode({
-      width: 120,
-      height: 120,
-      text: $('#text').val()
-    });
   }
 
   $(document).ready(function () {
