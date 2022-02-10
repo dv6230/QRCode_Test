@@ -33,8 +33,6 @@
 
   function createQRcode(){
     document.getElementById('qrcode').innerHTML = ""
-    document.getElementById('qrcode-table').innerHTML = ""
-    document.getElementById('qrcode-size').innerHTML = ""
 
     $('#qrcode').qrcode($('#text').val());
   }
