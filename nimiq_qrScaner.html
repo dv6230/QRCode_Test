@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Scan from WebCam 1.3</h1>
+    <h1>Scan from WebCam 1.4</h1>
     <div id="video-container">
         <video id="qr-video" style="width: 100% !important; height: auto !important;"></video>
     </div>
@@ -58,6 +58,7 @@
         },
         highlightScanRegion: true,
         highlightCodeOutline: true,
+        maxScansPerSecond : 15 ,
     });
 
     const updateFlashAvailability = () => {
@@ -93,7 +94,7 @@
     document.getElementById('stop-button').addEventListener('click', () => {
         scanner.stop();
     });
-    
+
 
 </script>
 </body>
