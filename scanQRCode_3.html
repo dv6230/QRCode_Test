@@ -28,10 +28,11 @@
 
 </div>
 <script>
-
+  var qrObj ;
   function scanStart() {
     var lastResult, countResults = 0;
     const html5QrCode = new Html5Qrcode(/* element id */ "scanDiv");
+    qrObj  = html5QrCode ;
     html5QrCode.start(
       {facingMode: "environment"},
       {
@@ -43,13 +44,8 @@
           ++countResults;
           lastResult = decodedText;
           var str = JSON.stringify(decodedResult, null, 4);
-          resultContainer.innerText = str;
-          alert("掃描成功")
-          html5QrcodeScanner.stop().then(ignore => {
-            var ele = document.getElementById("qr-reader").style.visibility = "hidden";
-          }).catch(err => {
-            // Stop failed, handle it.
-          });
+          document.getElementById("resultDiv").innerText = str;
+          stopScan();
         }
       },
       errorMessage => {
@@ -58,6 +54,14 @@
       .catch(err => {
         // Start failed, handle it.
       });
+  }
+  function stopScan(){
+    alert("掃描成功")
+    qrObj.stop().then((ignore) => {
+      // QR Code scanning is stopped.
+    }).catch((err) => {
+      // Stop failed, handle it.
+    });
   }
 
 </script>
